@@ -1,3 +1,4 @@
+
 from unittest import TestCase
 
 import unit1
@@ -6,10 +7,6 @@ import unittest
 
 class RunnerTest(TestCase):
     is_frozen = False
-    def decor(self):
-        self.is_frozen = True
-        if self.is_frozen is True:
-            pass
     def test_walk(self):
         w = unit1.Runner('1')
         for i in range(10):
@@ -75,3 +72,4 @@ class TournamentTest(TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
