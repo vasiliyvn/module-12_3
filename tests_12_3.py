@@ -37,7 +37,7 @@ class TournamentTest(TestCase):
     @classmethod
     def setUpClass(cls):
         cls.all_results = {}
-    @unittest.skipIf(True, 'Тесты в этом кейсе заморожены')
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def setUp(self):
         self.u = unit1.Runner('Усейн', 10)
         self.a = unit1.Runner('Андрей', 9)
@@ -48,21 +48,21 @@ class TournamentTest(TestCase):
         for i, elem in enumerate(cls.all_results):
             print(f'{i + 1},{elem}')
 
-    @unittest.skipIf(True, 'Тесты в этом кейсе заморожены')
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run(self):
         tour = unit1.Tournament(90, self.u, self.n)
         results = tour.start()
         self.all_results = results
         self.assertTrue(results[max(results.keys())] == 'Ник')
 
-    @unittest.skipIf(True, 'Тесты в этом кейсе заморожены')
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run1(self):
         tour = unit1.Tournament(90, self.a, self.n)
         results1 = tour.start()
         self.all_results = results1
         self.assertTrue(results1[max(results1.keys())] == 'Ник')
 
-    @unittest.skipIf(True, 'Тесты в этом кейсе заморожены')
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run2(self):
         tour = unit1.Tournament(90, self.u, self.a, self.n)
         results2 = tour.start()
